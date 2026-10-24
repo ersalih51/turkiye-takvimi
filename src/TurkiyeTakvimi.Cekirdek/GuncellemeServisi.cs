@@ -69,6 +69,9 @@ public sealed class GuncellemeServisi
 
             string sayfa = kok.TryGetProperty("html_url", out var h) ? h.GetString() ?? SurumSayfasi : SurumSayfasi;
             string notlar = kok.TryGetProperty("body", out var b) ? b.GetString() ?? "" : "";
+            // Uygulamada yalnızca "Yenilikler" gösterilir; sürüm sayfasındaki "İndirme" bölümü (dosya açıklamaları, Windows uyarısı) kesilir.
+            int indirme = Regex.Match(notlar, @"^#{1,6}\s*İndirme\b", RegexOptions.Multiline).Index;
+            if (indirme > 0) notlar = notlar[..indirme];
 
             string? ad = null, adres = null, ozet = null;
             if (kok.TryGetProperty("assets", out var dosyalar))

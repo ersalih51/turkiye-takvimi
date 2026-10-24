@@ -38,6 +38,13 @@ public class GuncellemeTestleri
     }
 
     [Fact]
+    public void Ayristir_NotlardaIndirmeBolumunuKeser()
+    {
+        var s = GuncellemeServisi.Ayristir("""{ "tag_name": "v2026.10.1", "body": "### Yenilikler\n\n- Yeni madde\n\n### İndirme\n\n- dosya açıklaması", "assets": [] }""");
+        Assert.Equal("Yenilikler\n- Yeni madde", s.Notlar);
+    }
+
+    [Fact]
     public void Ayristir_KurulumDosyasiYoksa_AdresVeOzetBos()
     {
         var s = GuncellemeServisi.Ayristir("""{ "tag_name": "2026.12", "assets": [ { "name": "baska.zip", "browser_download_url": "https://github.com/a" } ] }""");
