@@ -3,10 +3,10 @@
 
 #define Ad "Türkiye Takvimi"
 #ifndef Surum
-  #define Surum "2026.11"
+  #define Surum "2026.10.1"
 #endif
 #ifndef DosyaSurumu
-  #define DosyaSurumu "2026.11.0.0"
+  #define DosyaSurumu "2026.10.1.0"
 #endif
 #define Yayinci "Salih Eroğul"
 #define Exe "TurkiyeTakvimi.exe"

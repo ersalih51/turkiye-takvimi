@@ -1,4 +1,4 @@
-## Türkiye Takvimi 2026.11
+## Türkiye Takvimi 2026.10.1
 
 ### Yenilikler
 
@@ -9,8 +9,8 @@
 
 ### İndirme
 
-- **`TurkiyeTakvimi-2026.11-Kurulum.exe`**: Kurulum paketi (tüm kullanıcılar ya da yalnızca geçerli kullanıcı için; Başlat menüsü ve masaüstü kısayolu seçilebilir). Bilgisayarda .NET kurulu olması gerekmez. 2026.10 kurulu ise üstüne kurulur, ayarlarınız korunur.
-- **`TurkiyeTakvimi-2026.11-Tasinabilir.zip`**: Kurulum gerektirmeyen sürüm.
-- **`TurkiyeTakvimi-2026.11-Ozet.txt`**: Dosyaların SHA-256 özetleri.
+- **`TurkiyeTakvimi-2026.10.1-Kurulum.exe`**: Kurulum paketi (tüm kullanıcılar ya da yalnızca geçerli kullanıcı için; Başlat menüsü ve masaüstü kısayolu seçilebilir). Bilgisayarda .NET kurulu olması gerekmez. 2026.10 kurulu ise üstüne kurulur, ayarlarınız korunur.
+- **`TurkiyeTakvimi-2026.10.1-Tasinabilir.zip`**: Kurulum gerektirmeyen sürüm.
+- **`TurkiyeTakvimi-2026.10.1-Ozet.txt`**: Dosyaların SHA-256 özetleri.
 
 Dosyalar henüz dijital olarak imzalı değildir; Windows ilk çalıştırmada "Windows bilgisayarınızı korudu" uyarısı gösterebilir. **Ek bilgi** ve ardından **Yine de çalıştır** ile devam edebilirsiniz.
