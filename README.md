@@ -6,6 +6,17 @@ Bu uygulama Salih Eroğul tarafından, herkesin faydalanması amacıyla gelişti
 
 > Uygulama turktakvim.com sitesinin sahipleri tarafından hazırlanmış ya da onaylanmış resmî bir uygulama değildir. Tüm vakitler ve içerikler turktakvim.com sitesinden alınır.
 
+## İndirme ve kurulum
+
+En son sürümü **[Sürümler sayfasından](https://github.com/ersalih51/turkiye-takvimi/releases/latest)** indirin:
+
+- **`TurkiyeTakvimi-<sürüm>-Kurulum.exe`**: Kurulum paketi. İleri, ileri ile kurulur; tüm kullanıcılar ya da yalnızca geçerli kullanıcı için, Başlat menüsü ve masaüstü kısayolu seçilebilir. Bilgisayarda .NET kurulu olması gerekmez. Kaldırılınca iz bırakmaz.
+- **`TurkiyeTakvimi-<sürüm>-Tasinabilir.zip`**: Kurulum gerektirmeyen sürüm. Klasörü istediğiniz yere açıp `TurkiyeTakvimi.exe` dosyasını çalıştırın.
+
+Dosyalar henüz dijital olarak imzalı değildir; Windows ilk çalıştırmada "Windows bilgisayarınızı korudu" uyarısı gösterebilir. **Ek bilgi** ve ardından **Yine de çalıştır** ile devam edebilirsiniz. Her sürümle birlikte yayımlanan özet dosyası (SHA-256) indirdiğiniz dosyanın bozulmadığını doğrulamanızı sağlar.
+
+Uygulamanın içinde Yardım menüsünde **Güncellemeleri denetle** ve **Geri bildirim gönder** bulunur. Hata ve önerilerinizi [Sorunlar sayfasından](https://github.com/ersalih51/turkiye-takvimi/issues) da yazabilirsiniz.
+
 ## Özellikler
 
 - **Vakitler:** İmsak, Sabah, Güneş, Öğle, İkindi, Akşam ve Yatsı; sıradaki vakit ve kalan süre, canlı saat, hicrî tarih. Ramazan'da iftar ve sahur bilgisi öne çıkar.
@@ -24,6 +35,7 @@ Bu uygulama Salih Eroğul tarafından, herkesin faydalanması amacıyla gelişti
 
 - Bilgileriniz yalnızca kendi bilgisayarınızda saklanır.
 - Uygulama yalnızca turktakvim.com'a vakit ve içerik istekleri gönderir. "Konumumu internet adresimden tahmin et" düğmesine basarsanız yaklaşık konum için ipwho.is hizmetine istek gider; yalnızca siz bastığınızda.
+- Uygulama kendiliğinden güncelleme aramaz. Yalnızca Yardım menüsünde **Güncellemeleri denetle**'yi seçerseniz en son sürüm bilgisi için github.com'a bağlanır. **Geri bildirim gönder** tarayıcıda GitHub'daki yeni kayıt sayfasını açar; sürüm ve Windows bilgisi dışında kişisel bilgi eklenmez.
 - Beklenmeyen hatalar bu bilgisayarda `%LocalAppData%\TurkiyeTakvimi\kayit\hata.log` dosyasına yazılır; hiçbir yere gönderilmez ve içinde yer ya da kişisel bilgi bulunmaz.
 
 ## Kullanım

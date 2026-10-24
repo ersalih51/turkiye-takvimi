@@ -98,6 +98,12 @@ public static class YardimIcerigi
             "Bir yılın içeriğini önceden indirmek için Ayarlar menüsündeki Çevrimdışı veri'de Çevrimdışı için yıl indir bölümünü kullanın.",
             "İmsakiye için hicrî tarih bilgisi gerekir; bir kez hazırlanınca çevrimdışı da görünür. Bilgiler yazıları ise açıldıkça indirilir.")),
 
+        new("Güncelleme ve geri bildirim", Satirlar(
+            "Güncellemeleri denetle, Yardım menüsündedir. Uygulama kendiliğinden güncelleme aramaz; yalnızca siz seçince, en son sürümü öğrenmek için GitHub'a bağlanır.",
+            "Yeni sürüm varsa kurulu sürümünüzde İndir ve kur düğmesi görünür: yeni sürümü indirir, bozulmadığını doğrular, uygulamayı kapatır ve kurulumu başlatır. Taşınabilir sürümde ise Sürüm sayfasını aç düğmesiyle yeni zip dosyasını kendiniz indirirsiniz.",
+            "Geri bildirim gönder, hata ya da önerinizi GitHub'daki proje sayfasına yazmanız için tarayıcıda yeni kayıt sayfasını açar. Sürüm ve Windows bilgisi önceden yazılır. Kayıt herkese açıktır ve GitHub hesabı gerektirir; bu yüzden adres, telefon ya da e-posta gibi kişisel bilgi yazmayın.",
+            "Sorun bir hata kaydıyla ilgiliyse Hakkında penceresindeki Hata kaydını aç düğmesiyle kaydı görebilir, gerekirse ilgili kısmı geri bildirime ekleyebilirsiniz.")),
+
         new("Sorun giderme", Satirlar(
             "Vakitler görünmüyorsa: internet bağlantınızı denetleyin ve F5'e basın. Seçili yerin yıllık verisi hiç indirilmediyse ilk gösterim için internet gerekir.",
             "İmsakiye ya da bir mübarek gün listesi boş görünüyorsa: turktakvim.com, o yılın hicrî tarihlerini henüz yayımlamamış olabilir. Site yayımlayınca kendiliğinden görünür.",

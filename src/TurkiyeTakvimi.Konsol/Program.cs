@@ -122,6 +122,23 @@ try
             Console.WriteLine(string.Create(CultureInfo.InvariantCulture, $"D={ManyetikSapma.Hesapla(enlem, boylam, yil, km):0.00} X={x:0.0} Y={y:0.0} Z={z:0.0}"));
             return 0;
         }
+        case "guncelleme":
+        {
+            // guncelleme [kurulu sürüm] [indir]: GitHub'daki en son sürümü denetler; "indir" kurulum dosyasını indirip doğrular (çalıştırmaz).
+            string kurulu = args.Length > 1 ? args[1] : "2026.10";
+            var gs = new GuncellemeServisi();
+            var son = await gs.SonSurumuAlAsync(kurulu);
+            bool yeni = GuncellemeServisi.YeniMi(Version.Parse(kurulu), son.Surum);
+            Console.WriteLine($"Kurulu {kurulu}, en son {son.Etiket}: {(yeni ? "YENİ SÜRÜM VAR" : "güncel")}");
+            Console.WriteLine($"Kurulum dosyası: {son.KurulumAdi}; özet: {son.KurulumOzeti}");
+            if (args.Length > 2 && args[2] == "indir")
+            {
+                string yol = await gs.KurulumuIndirAsync(son, new Progress<double>());
+                Console.WriteLine($"İndirildi ve doğrulandı: {yol} ({new FileInfo(yol).Length / 1048576.0:0.0} MB)");
+                File.Delete(yol);
+            }
+            return 0;
+        }
         case "bilgiler":
         {
             var servis = new BilgilerServisi(istemci, onbellek);

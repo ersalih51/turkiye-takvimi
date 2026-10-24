@@ -463,6 +463,8 @@
                 <Separator/>
                 <MenuItem Header="Hoş _geldiniz" Click="Karsilama_Click"/>
                 <MenuItem Header="_Hakkında" Click="Hakkinda_Click"/>
+                <MenuItem Header="Güncellemeleri _denetle…" Click="Guncelleme_Click"/>
+                <MenuItem Header="Geri _bildirim gönder…" Click="GeriBildirim_Click"/>
                 <Separator/>
                 <MenuItem Header="Ç_ıkış" InputGestureText="Ctrl+Q" Click="Cikis_Click"/>
             </MenuItem>

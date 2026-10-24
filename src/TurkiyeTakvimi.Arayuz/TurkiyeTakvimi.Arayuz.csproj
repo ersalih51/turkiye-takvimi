@@ -12,8 +12,8 @@
     <UseWPF>true</UseWPF>
     <NoWarn>$(NoWarn);WPF0001</NoWarn>
     <AssemblyName>TurkiyeTakvimi</AssemblyName>
-    <Version>2026.10.0</Version>
-    <FileVersion>2026.10.0.0</FileVersion>
+    <Version>2026.11.0</Version>
+    <FileVersion>2026.11.0.0</FileVersion>
     <Authors>Salih Eroğul</Authors>
     <Product>Türkiye Takvimi</Product>
     <Description>Namaz vakitleri, takvim, çizelgeler, imsakiye ve mübarek gün ve geceler.</Description>
