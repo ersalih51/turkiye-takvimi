@@ -1,0 +1,11 @@
+Türkiye Takvimi, taşınabilir sürüm
+
+Kurulum gerektirmez. Bu klasörü istediğiniz yere (masaüstü, USB bellek, belgeler) kopyalayın ve TurkiyeTakvimi.exe dosyasını çalıştırın. Bilgisayarda .NET kurulu olması da gerekmez.
+
+Veriler: Ayarlar, önbellek ve hata kaydı bu klasördeki "Veri" klasörüne yazılır. Klasörü taşırsanız ayarlarınız da onunla taşınır. Klasörü silerseniz bilgisayarda hiçbir iz kalmaz.
+
+Not: Ayarlar'dan "Windows ile birlikte başlat" seçeneğini açarsanız Windows'un başlangıç listesine bu klasörün yolu yazılır. Taşınabilir sürümü silmeden önce o seçeneği kapatın.
+
+Kurulu sürümle aynı anda çalıştırmayın: ikisi aynı anda açık olamaz.
+
+Lisans: MIT (LICENSE.txt). Veriler turktakvim.com sitesinden alınır.

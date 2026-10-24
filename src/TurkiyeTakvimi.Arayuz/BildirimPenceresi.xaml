@@ -1,0 +1,116 @@
+﻿<Window x:Class="TurkiyeTakvimi.Arayuz.BildirimPenceresi"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Bildirim ayarları" Width="660" SizeToContent="Height" MinWidth="460"
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False" FontSize="16"
+        FontFamily="Segoe UI Variable Text, Segoe UI" Icon="Varliklar/uygulama.ico">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Stiller.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <!-- Tab sırası yazıldığı gibidir: bildirim sesi, vakitten önce hatırlat, sessiz saatler (kutu, başlangıç, bitiş),
+         Tüm ana vakitler ve yedi ana vakit, Tüm diğer vakitler ve diğer vakitler, Kapat. -->
+    <Grid x:Name="Kok">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Focusable="False">
+    <StackPanel Margin="24,16,24,6">
+        <Border CornerRadius="12" Padding="18,14" Margin="0,0,0,12" Background="{DynamicResource AccentFillColorDefaultBrush}">
+            <StackPanel>
+                <TextBlock Text="Bildirim ayarları" FontSize="26" FontWeight="SemiBold" FontFamily="{StaticResource BaslikYazisi}"
+                           Foreground="{DynamicResource TextOnAccentFillColorPrimaryBrush}"/>
+                <TextBlock TextWrapping="Wrap" FontSize="17" Margin="0,2,0,0"
+                           Foreground="{DynamicResource TextOnAccentFillColorPrimaryBrush}"
+                           Text="Bildirim almak istediğiniz vakitleri işaretleyin. Hiçbiri işaretli değilse bildirim gelmez."/>
+            </StackPanel>
+        </Border>
+
+        <!-- Bildirim durumu: yalnızca bilgi; ayarlar değiştikçe güncellenir. -->
+        <Label Content="Bildirim durumu" Target="{Binding ElementName=DurumOzeti}" Style="{StaticResource BolumEtiketi}"/>
+        <TextBox x:Name="DurumOzeti" Style="{StaticResource OkunurYazi}" Padding="12,8" FontSize="17" TextBlock.LineHeight="24"
+                 VerticalScrollBarVisibility="Disabled" Margin="0,0,0,12" AutomationProperties.Name="Bildirim durumu"/>
+
+        <Border Style="{StaticResource BilgiKarti}" Margin="0,0,0,12">
+            <StackPanel>
+                <CheckBox x:Name="SesKutusu" Margin="0,0,0,8" Checked="Ses_Click" Unchecked="Ses_Click"
+                          Content="Bildirimle birlikte kısa uyarı sesi çal"/>
+                <Grid Margin="26,0,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <Label Content="Bildirim sesi" Target="{Binding ElementName=SesSecimKutusu}" Style="{StaticResource BolumEtiketi}"/>
+                        <ComboBox x:Name="SesSecimKutusu" FontSize="17" HorizontalAlignment="Stretch"
+                                  AutomationProperties.Name="Bildirim sesi" SelectionChanged="SesSecimi_SelectionChanged"/>
+                    </StackPanel>
+                    <Button x:Name="SesDinleDugmesi" Grid.Column="1" Content="Dinle" Padding="18,7" Margin="10,0,0,0"
+                            VerticalAlignment="Bottom" Click="SesDinle_Click"/>
+                </Grid>
+                <CheckBox x:Name="MubarekKutusu" Margin="0,0,0,8" Checked="Mubarek_Click" Unchecked="Mubarek_Click"
+                          Content="Mübarek gün ve gecelerde haber ver (bir gün önce akşam, o gün sabah)"/>
+                <CheckBox x:Name="SessizKutusu" Margin="0,0,0,10" Checked="Sessiz_Click" Unchecked="Sessiz_Click"
+                          Content="Sessiz saatlerde bildirim gösterme"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.5*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                        <Label Content="Vakitten önce hatırlat" Target="{Binding ElementName=OncedenKutusu}" Style="{StaticResource BolumEtiketi}"/>
+                        <ComboBox x:Name="OncedenKutusu" FontSize="17" HorizontalAlignment="Stretch"
+                                  AutomationProperties.Name="Vakitten önce hatırlat" SelectionChanged="Onceden_SelectionChanged"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="0,0,10,0">
+                        <Label Content="Sessiz başlangıç" Target="{Binding ElementName=SessizBasKutusu}" Style="{StaticResource BolumEtiketi}"/>
+                        <ComboBox x:Name="SessizBasKutusu" FontSize="17" HorizontalAlignment="Stretch"
+                                  AutomationProperties.Name="Sessiz saatlerin başlangıcı" SelectionChanged="SessizSaat_SelectionChanged"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <Label Content="Sessiz bitiş" Target="{Binding ElementName=SessizBitKutusu}" Style="{StaticResource BolumEtiketi}"/>
+                        <ComboBox x:Name="SessizBitKutusu" FontSize="17" HorizontalAlignment="Stretch"
+                                  AutomationProperties.Name="Sessiz saatlerin bitişi" SelectionChanged="SessizSaat_SelectionChanged"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </Border>
+
+        <Border Style="{StaticResource BilgiKarti}" Margin="0,0,0,12">
+            <StackPanel>
+                <TextBlock Text="Ana vakitler" FontSize="18" FontWeight="SemiBold" Margin="2,0,0,6"/>
+                <CheckBox x:Name="AnaTumuKutusu" Margin="0,0,0,6" FontWeight="SemiBold"
+                          Content="Tüm ana vakitler" Checked="AnaTumu_Click" Unchecked="AnaTumu_Click"/>
+                <UniformGrid x:Name="AnaKutular" Columns="4" Margin="26,0,0,0"/>
+            </StackPanel>
+        </Border>
+
+        <Border Style="{StaticResource BilgiKarti}" Margin="0,0,0,12">
+            <StackPanel>
+                <TextBlock Text="Diğer vakitler" FontSize="18" FontWeight="SemiBold" Margin="2,0,0,6"/>
+                <CheckBox x:Name="DigerTumuKutusu" Margin="0,0,0,6" FontWeight="SemiBold"
+                          Content="Tüm diğer vakitler" Checked="DigerTumu_Click" Unchecked="DigerTumu_Click"/>
+                <UniformGrid x:Name="DigerKutular" Columns="3" Margin="26,0,0,0"/>
+            </StackPanel>
+        </Border>
+    </StackPanel>
+    </ScrollViewer>
+        <Grid Grid.Row="1" Margin="24,6,24,16">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="Durum" TextWrapping="Wrap" FontWeight="SemiBold" VerticalAlignment="Center" Margin="2,0,12,0"
+                       AutomationProperties.LiveSetting="Polite"/>
+            <Button x:Name="KapatDugmesi" Grid.Column="1" Content="Kapat" Padding="30,9"
+                    IsCancel="True" Style="{DynamicResource AccentButtonStyle}" Click="Kapat_Click"/>
+        </Grid>
+    </Grid>
+</Window>

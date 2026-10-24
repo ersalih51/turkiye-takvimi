@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\TurkiyeTakvimi.Cekirdek\TurkiyeTakvimi.Cekirdek.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <NoWarn>$(NoWarn);WPF0001</NoWarn>
+    <AssemblyName>TurkiyeTakvimi</AssemblyName>
+    <Version>2026.10.0</Version>
+    <FileVersion>2026.10.0.0</FileVersion>
+    <Authors>Salih Eroğul</Authors>
+    <Product>Türkiye Takvimi</Product>
+    <Description>Namaz vakitleri, takvim, çizelgeler, imsakiye ve mübarek gün ve geceler.</Description>
+    <Copyright>© 2026 Salih Eroğul</Copyright>
+    <!-- Çıktı hedef Windows sürümünden bağımsız sabit klasöre gider: bin\Debug\ (başlatma dosyası buraya bakar). -->
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <RootNamespace>TurkiyeTakvimi.Arayuz</RootNamespace>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>Varliklar\uygulama.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- WinForms yalnızca bildirim alanı simgesi için kullanılır; ad çakışması olmasın diye örtük using'leri kaldır. -->
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+    <Resource Include="Varliklar\uygulama.ico" />
+    <Resource Include="Varliklar\Sesler\*.wav" />
+  </ItemGroup>
+
+</Project>
+

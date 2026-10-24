@@ -1,0 +1,69 @@
+﻿<Window x:Class="TurkiyeTakvimi.Arayuz.HakkindaPenceresi"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Hakkında" Width="700" SizeToContent="Height" MinWidth="440"
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False" FontSize="16"
+        FontFamily="Segoe UI Variable Text, Segoe UI" Icon="Varliklar/uygulama.ico">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Stiller.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <!-- Tab sırası: bilgi listesi, Veri klasörünü aç, Siteyi aç, Kapat. -->
+    <Grid x:Name="Kok">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Focusable="False">
+    <StackPanel Margin="24,20,24,6">
+
+        <!-- Üst bant: simge, ad ve sürüm (görsel; aynı bilgi listede de var) -->
+        <Border CornerRadius="12" Padding="18,16" Margin="0,0,0,14"
+                Background="{DynamicResource AccentFillColorDefaultBrush}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="Simge" Width="72" Height="72" Margin="0,0,16,0" RenderOptions.BitmapScalingMode="HighQuality"/>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Text="Türkiye Takvimi" FontSize="30" FontWeight="SemiBold" FontFamily="{StaticResource BaslikYazisi}"
+                               Foreground="{DynamicResource TextOnAccentFillColorPrimaryBrush}"/>
+                    <TextBlock x:Name="SurumYazisi" FontSize="17" Margin="0,2,0,0"
+                               Foreground="{DynamicResource TextOnAccentFillColorPrimaryBrush}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Imleçli salt okunur metin: NVDA'nın "tümünü oku" komutu çalışır. Paragraflar tek satır sonuyla ayrılır. -->
+        <TextBox x:Name="Bilgiler" Style="{StaticResource OkunurYazi}" Margin="0,0,0,10" Height="330" FontSize="17"
+                 AutomationProperties.Name="Uygulama hakkında bilgiler"/>
+
+    </StackPanel>
+    </ScrollViewer>
+    <StackPanel Grid.Row="1" Margin="24,0,24,12">
+        <TextBlock x:Name="Durum" TextWrapping="Wrap" FontWeight="SemiBold" MinHeight="22" Margin="2,0,0,8"
+                   AutomationProperties.LiveSetting="Polite"/>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <WrapPanel Grid.Column="0" VerticalAlignment="Center">
+                <Button x:Name="KlasorDugmesi" Content="Veri klasörünü aç" Padding="14,8" Margin="0,0,8,6" Click="Klasor_Click"/>
+                <Button x:Name="HataDugmesi" Content="Hata kaydını aç" Padding="14,8" Margin="0,0,8,6" Click="Hata_Click"/>
+                <Button x:Name="SiteDugmesi" Content="turktakvim.com'u aç" Padding="14,8" Margin="0,0,8,6" Click="Site_Click"/>
+            </WrapPanel>
+            <Button x:Name="KapatDugmesi" Grid.Column="1" Content="Kapat" Padding="28,8" VerticalAlignment="Top"
+                    IsCancel="True" IsDefault="True" Style="{DynamicResource AccentButtonStyle}" Click="Kapat_Click"/>
+        </Grid>
+    </StackPanel>
+    </Grid>
+</Window>

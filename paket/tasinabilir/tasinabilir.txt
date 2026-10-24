@@ -1,0 +1,4 @@
+Bu dosya, Türkiye Takvimi'nin taşınabilir sürüm olarak çalışmasını sağlar. Silmeyin.
+
+Bu dosya uygulamanın yanındayken ayarlar, önbellek ve hata kaydı bu klasördeki "Veri" klasörüne yazılır; bilgisayarın başka hiçbir yerinde iz bırakılmaz.
+Dosyayı silerseniz uygulama, kurulu sürüm gibi, verilerini Windows kullanıcı klasörüne yazar.

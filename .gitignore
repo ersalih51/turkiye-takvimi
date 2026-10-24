@@ -1,0 +1,15 @@
+# Derleme ciktilari (her derlemede yeniden uretilir)
+bin/
+obj/
+.vs/
+*.user
+
+# Paketleme ara urunleri ve urunler. Surumler\ klasoru yayimlanan surumlerin arsividir; buyuk ikili dosyalar git'e girmez,
+# ayri (or. bulut deposu) yedeklenir.
+paket/yayin/
+paket/Cikti/
+paket/Surumler/
+paket/TurkiyeTakvimi-*-Tasinabilir/
+
+# Gelistirici ici notlar (kisisel ayrintilar icerir): yalnizca yerel yedekte durur, herkese acik depoya girmez.
+docs/PROJE-NOTLARI.md
